@@ -4,6 +4,7 @@ import Pricing from '@/components/Pricing'
 import ProjectSlider from '@/components/ProjectSlider'
 import Testimonial from '@/components/Testimonial'
 import Works from '@/components/Works'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
     
     <FAQ />
    </section>
+   <GoogleAnalytics gaId='G-EPE5H2NTDE' />
    </main>
   )
 }
