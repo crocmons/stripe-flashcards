@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { CiMenuFries } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
-
+import { SignIn,SignUp, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 const Navbar = () => {
   const [click, setClick] = useState(false);
 
@@ -62,19 +62,44 @@ const Navbar = () => {
                         FAQ
                         </Link>
                         </li>
+                        <SignedOut>
+                          <li className="pb-6 text-xl text-slate-900 font-medium py-2 md:px-6 text-center border-b-2 md:border-b-0 md:hover:text-purple-600 md:hover:bg-transparent">
+                          <Link href={"/sign-in"} onClick={()=>setClick(!click)}>
+                          Sign In
+                          </Link>
+                          </li>
+                          <li className="pb-6 text-xl text-slate-900 font-medium py-2 md:px-6 text-center border-b-2 md:border-b-0 md:hover:text-purple-600 md:hover:bg-transparent">
+                          <Link href={"/sign-up"} onClick={()=>setClick(!click)}>
+                          Sign Up
+                          </Link>
+                          </li>
+                        </SignedOut>
+                        <SignedIn>
+                        <li className="pb-6 text-xl text-slate-900 font-medium py-2 md:px-6 text-center border-b-2 md:border-b-0 md:hover:text-purple-600 md:hover:bg-transparent">
+                          <Link href='/generate' onClick={()=>setClick(!click)}>
+                          Create Flashcards
+                          </Link>
+                          </li>
+                          <li className="pb-6 text-xl text-slate-900 font-medium py-2 md:px-6 text-center border-b-2 md:border-b-0 md:hover:text-purple-600 md:hover:bg-transparent">
+                          <Link href='/flashcards' onClick={()=>setClick(!click)}>
+                          View Flashcards
+                          </Link>
+                          </li>
+                        </SignedIn>
                         <button className="mt-2 md:hidden py-2 px-4  text border border-slate-700 text-center items-center justify-center text-black">
-                        <Link href="#">
-                        Contact Us
-                        </Link>
+                        <SignedIn>
+                        <UserButton className="mt-2 md:hidden py-2 px-4  text border border-slate-700 text-center items-center justify-center text-black"/>
+                        </SignedIn>
                       </button>
                       </ul>
                       
                 </div>
             </div>
-                        <button className="hidden md:flex py-2 px-4 text border border-slate-700 text-center items-center justify-center text-black">
-                        <Link href="#">
-                        Contact Us
-                        </Link>
+                       
+            <button className="hidden md:flex py-2 px-4 text  border-slate-700 text-center items-center justify-center text-black">
+                        <SignedIn>
+                        <UserButton  />
+                        </SignedIn>
                       </button>
 
           </div>
