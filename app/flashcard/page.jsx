@@ -126,7 +126,7 @@ export default function Flashcard() {
                         <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2, width: '100%' }}>
                             <Button 
                             className="py-2 px-4 border border-slate-700 text-center items-center 
-                            justify-center text-white bg-black rounded-md text-xl my-1" 
+                            justify-center text-white bg-black rounded-md text-2xl my-1" 
                                 onClick={handlePrev} 
                                 disabled={currentIndex === 0} 
                                 sx={{ color: 'white','&.Mui-disabled': {
@@ -137,8 +137,8 @@ export default function Flashcard() {
                                 <ArrowBack />  
                             </Button>
                             <Button 
-                            className="py-2 px-4 border border-slate-700 text-center items-center 
-                            justify-center text-white bg-black rounded-md text-xl my-1" 
+                                className="py-2 px-4 border border-slate-700 text-center items-center 
+                                justify-center text-white bg-black rounded-md font-bold text-xl my-1" 
                                 onClick={handleNext} 
                                 disabled={currentIndex === flashcards.length - 1} 
                                 sx={{ color: 'white','&.Mui-disabled': {
