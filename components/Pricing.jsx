@@ -29,7 +29,7 @@ const PricingCard = ({ title, price, description, features, isHighlighted }) => 
 const Pricing = () => {
   const pricingPlans = [
     {
-      title: 'Freebie',
+      title: 'Free Plan',
       price: '$0',
       description: 'Ideal for individuals who need quick access to basic features.',
       features: [

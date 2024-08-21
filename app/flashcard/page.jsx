@@ -85,7 +85,7 @@ export default function Flashcard() {
 
     return (
         <Container className=" mt-24 md:mt-24"> 
-            <Box sx={{ mt: 4 }} className="flex flex-col items-center justify-center">
+            <Box sx={{ mt: 4 }} className="flex flex-col items-center justify-center mx-auto">
                 <Typography variant="h5" className='font-bold leading-tight py-2 tracking-wider'>
                     Flashcards
                 </Typography>

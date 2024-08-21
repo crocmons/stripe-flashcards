@@ -43,7 +43,7 @@ const Works = () => {
         alt='2'
         />
         <h2 className='font-bold text-3xl pt-0 mt-0 pb-2 text-center justify-center top-20 right-56 md:absolute text-black'>
-        Request
+        Generate
         </h2>
         <span className='flex-col text-center justify-center text-sm text-gray-700'>Submit any number of requests. We'll work through them, one at a time, ensuring consistent updates every 24-48 hours</span>
         </div>
@@ -56,7 +56,7 @@ const Works = () => {
         alt='3'
         />
         <h2 className='font-bold text-3xl pt-0 mt-0 pb-2 text-center justify-center mx-auto top-20 right-32 md:absolute text-black'>
-        Revise
+        Saved
         </h2>
         <span className='flex-col text-center justify-center text-sm text-gray-700'>Need changes? We guarantee unlimited revisions until you're 200% satisfied.</span>
         </div>

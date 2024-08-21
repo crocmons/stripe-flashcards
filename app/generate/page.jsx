@@ -126,7 +126,7 @@ export default function generate() {
     }
 
     return (
-        <Container maxWidth="lg" className=" flex items-center justify-center flex-col my-14 md:my-24">
+        <Container maxWidth="lg" className=" flex items-center justify-center flex-col my-14 md:my-28">
                 <Box sx={{ my: 4 }} className="w-1/2">
                     <Typography variant="h4" className='font-bold text-2xl md:text-4xl leading-tight py-2 tracking-wider' component="h1" gutterBottom>
                         Create Flashcards

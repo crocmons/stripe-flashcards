@@ -33,7 +33,7 @@ export default function Flashcard() {
       }, [user])
 
     return(
-      <Container className="flex items-center justify-center flex-col my-24 md:my-24" maxWidth="md">
+      <Container className="flex items-center justify-center flex-col my-24 md:my-24 mx-auto" maxWidth="md">
        <Typography variant="h5" className='font-bold leading-tight py-2 tracking-wider'>
                     Flashcard Sets
       </Typography>

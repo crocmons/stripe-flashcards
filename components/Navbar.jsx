@@ -48,17 +48,17 @@ const Navbar = () => {
                 <div className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 ${click ? 'p-12 md:p-0 block' : 'hidden' }`}>
                       <ul className=" h-screen md:h-auto items-center justify-center text-center md:flex">
                         <li className="pb-6 text-xl text-slate-900 font-medium py-2 md:px-6 text-center border-b-2 md:border-b-0 md:hover:text-purple-600 md:hover:bg-transparent">
-                        <Link href='#works' onClick={()=>setClick(!click)}>
+                        <Link href='/#works' onClick={()=>setClick(!click)}>
                         How it Works
                         </Link>
                         </li>
                         <li className="pb-6 text-xl text-slate-900 font-medium py-2 md:px-6 text-center border-b-2 md:border-b-0 md:hover:text-purple-600 md:hover:bg-transparent">
-                        <Link href='#pricing' onClick={()=>setClick(!click)}>
+                        <Link href='/#pricing' onClick={()=>setClick(!click)}>
                         Pricing
                         </Link>
                         </li>
                         <li className="pb-6 text-xl text-slate-900 font-medium py-2 md:px-6 text-center border-b-2 md:border-b-0 md:hover:text-purple-600 md:hover:bg-transparent">
-                        <Link href='#faq' onClick={()=>setClick(!click)}>
+                        <Link href='/#faq' onClick={()=>setClick(!click)}>
                         FAQ
                         </Link>
                         </li>

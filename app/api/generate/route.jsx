@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import OpenAI from "openai";
 import Groq from "groq-sdk";
 
 
@@ -31,14 +30,6 @@ const completion = await groq.chat.completions.create({
     response_format: { type: 'json_object' }
   });
 
-// const completion = await openai.chat.completions.create({
-//     messages: [
-//       { role: 'system', content: systemPrompt },
-//       { role: 'user', content: data },
-//     ],
-//     model: 'gpt-3.5-turbo',
-//     response_format: { type: 'json_object' },
-//   })
 
 const flashcards= JSON.parse(completion.choices[0].message.content)
 return NextResponse.json(flashcards)
