@@ -7,6 +7,7 @@ import db from "@/firebase"
 import { useSearchParams } from "next/navigation"
 import { useUser } from "@clerk/nextjs"
 import { doc, getDoc } from "firebase/firestore"
+import Link from "next/link";
 
 export default function Flashcard() {
     const { isLoaded, isSignedIn, user } = useUser()
@@ -124,7 +125,7 @@ export default function Flashcard() {
                         </Card>
 
                         <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2, width: '100%' }}>
-                            <Button 
+                            <button 
                             className="py-2 px-4 border border-slate-700 text-center items-center 
                             justify-center text-white bg-black rounded-md text-2xl my-1" 
                                 onClick={handlePrev} 
@@ -135,19 +136,16 @@ export default function Flashcard() {
     } }}
                             >
                                 <ArrowBack />  
-                            </Button>
-                            <Button 
+                            </button>
+                            <button 
                                 className="py-2 px-4 border border-slate-700 text-center items-center 
                                 justify-center text-white bg-black rounded-md font-bold text-xl my-1" 
                                 onClick={handleNext} 
                                 disabled={currentIndex === flashcards.length - 1} 
-                                sx={{ color: 'white','&.Mui-disabled': {
-      color: 'gray', 
-      backgroundColor: '#333', 
-    } }}
+                                
                             >
                                 <ArrowForward />  {/* Next button with forward arrow */}
-                            </Button>
+                            </button>
                         </Box>
                     </Box>
                 )}

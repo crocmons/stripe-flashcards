@@ -34,10 +34,10 @@ export default function Flashcard() {
 
     return(
       <Container className="flex items-center justify-center flex-col my-24 md:my-24 mx-auto" maxWidth="md">
-       <Typography variant="h5" className='font-bold leading-tight py-2 tracking-wider'>
+       <Typography variant="h5" className='font-bold leading-tight py-2 tracking-wider text-2xl'>
                     Flashcard Sets
       </Typography>
-      <Grid container spacing={3} sx={{ mt: 4 }} className="flex">
+      <Grid container spacing={3} sx={{ mt: 4 }} className="my-5 flex">
         {flashcards.map((flashcard, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
             <Card>

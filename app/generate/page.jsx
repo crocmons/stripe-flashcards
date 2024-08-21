@@ -1,7 +1,7 @@
 'use client'
 import { useState } from "react"
 import { useRouter } from "next/router"
-import { Card, CardActionArea, CardContent, Box, Button, Container, Grid, TextField, Typography, Dialog, DialogContent, DialogContentText, DialogTitle, DialogActions } from "@mui/material"
+import { Card, CardActionArea, CardContent, Box, Button, Container, Grid, TextField, Typography, Dialog, DialogContent, DialogContentText, DialogTitle, DialogActions, Paper } from "@mui/material"
 import db from "@/firebase"
 import { doc, collection, writeBatch, getDoc, } from "firebase/firestore"
 import { useUser } from "@clerk/nextjs"
@@ -130,9 +130,9 @@ export default function generate() {
     }
 
     return (
-        <Container maxWidth="lg" className=" flex items-center justify-center flex-col mx-auto my-14 md:my-28">
+        <div className="flex items-center justify-center flex-col mx-auto my-14 md:my-28">
                 <Box sx={{ my: 4 }} className="w-1/2">
-                    <Typography variant="h4" className='font-bold text-2xl md:text-4xl leading-tight py-2 tracking-wider' component="h1" gutterBottom>
+                    <Typography variant="h4" className='font-bold text-xl md:text-4xl leading-tight py-2 tracking-wider' component="h1" gutterBottom>
                         Create Flashcards
                     </Typography>
                     <TextField
@@ -145,7 +145,7 @@ export default function generate() {
                         sx={{ mb: 2 }}
                         type="text" />
                     <div className="flex justify-center items-center">
-                    <Button
+                    <button
                     
                         className="py-2 px-4 border border-slate-700 text-center items-center 
         justify-center text-white bg-black rounded-md text-xl my-1"
@@ -153,12 +153,12 @@ export default function generate() {
                         disabled={isLoading }
                         
                     >
-                        <Link href="#generate">{isLoading ? "Submitting....." :"Submit"}</Link>
+                        <Link href="#generate">{isLoading ? "Thinking....." :"Submit"}</Link>
                         
-                    </Button>
+                    </button>
                 </div>
                 </Box>
-                {flashcards?.length > 0 && (
+                {flashcards.length > 0 && (
                     <Box sx={{ mt: 4 }} className="w-3/4">
                         <Typography variant="h5" className='font-bold text-2xl md:text-4xl leading-tight py-2 tracking-wider' >Flashcards Preview</Typography>
                         <Grid container spacing={3} sx={{ mt: 4 }}>
@@ -241,7 +241,7 @@ export default function generate() {
                     </DialogActions>
                 </Dialog>
             
-        </Container>
+        </div>
     )
 }
 
