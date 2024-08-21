@@ -20,17 +20,17 @@ import {
     export const WorkProjects = [
       {
         icon: RxDesktop,
-        title:'Website Development',
+        title:'',
         bgImg: '/rwork1.png'
       },
       {
         icon: RxCrop,
-        title:'Cyber Security',
+        title:'',
         bgImg: '/rwork2.png'
       },
       {
         icon: RxReader,
-        title:'Android Development',
+        title:'',
         bgImg: '/rwork3.png'
       },
       
