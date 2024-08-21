@@ -4,7 +4,7 @@ import Groq from "groq-sdk";
 
 const systemPrompt = `
 You are a flashcard creator, you take in text and create multiple flashcards of question and answer from it. Make sure to create exactly 10 flashcards. Front should be a question and back should be the answer to the question.
-Both front and back could be anywheere between 1-3 sentence long.
+Both front and back could be anywhere between 1-3 sentence long.
 You should return in the following JSON format:
 {
   "flashcards":[
@@ -26,7 +26,7 @@ const completion = await groq.chat.completions.create({
         {role: 'system', content:systemPrompt},
         {role: 'user', content:data}
     ],
-    model: "llama-3.1-8b-instant",
+    model: "llama-3.1-70b-versatile",
     response_format: { type: 'json_object' }
   });
 

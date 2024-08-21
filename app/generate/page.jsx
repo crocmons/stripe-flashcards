@@ -16,6 +16,7 @@ export default function generate() {
     const [flipped, setFlipped] = useState({})
     const [setName, setSetName] = useState('')
     const [dialogOpen, setDialogOpen] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
     const cardStyles = {
         perspective: '1000px',
     };
@@ -96,6 +97,7 @@ export default function generate() {
 
     const handleSubmit = async () => {
         try {
+            setIsLoading(true)
             const response = await fetch('api/generate', {
                 method: 'POST',
                 body: text
@@ -113,6 +115,8 @@ export default function generate() {
 
         } catch (Error) {
             console.error("Error occured: ", Error)
+        }finally{
+            setIsLoading(false)
         }
     }
 
@@ -126,7 +130,7 @@ export default function generate() {
     }
 
     return (
-        <Container maxWidth="lg" className=" flex items-center justify-center flex-col my-14 md:my-28">
+        <Container maxWidth="lg" className=" flex items-center justify-center flex-col mx-auto my-14 md:my-28">
                 <Box sx={{ my: 4 }} className="w-1/2">
                     <Typography variant="h4" className='font-bold text-2xl md:text-4xl leading-tight py-2 tracking-wider' component="h1" gutterBottom>
                         Create Flashcards
@@ -146,14 +150,15 @@ export default function generate() {
                         className="py-2 px-4 border border-slate-700 text-center items-center 
         justify-center text-white bg-black rounded-md text-xl my-1"
                         onClick={handleSubmit}
+                        disabled={isLoading }
                         
                     >
-                        <Link href="#generate">Submit</Link>
+                        <Link href="#generate">{isLoading ? "Submitting....." :"Submit"}</Link>
                         
                     </Button>
                 </div>
                 </Box>
-                {flashcards.length > 0 && (
+                {flashcards?.length > 0 && (
                     <Box sx={{ mt: 4 }} className="w-3/4">
                         <Typography variant="h5" className='font-bold text-2xl md:text-4xl leading-tight py-2 tracking-wider' >Flashcards Preview</Typography>
                         <Grid container spacing={3} sx={{ mt: 4 }}>

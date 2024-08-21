@@ -1,5 +1,6 @@
 "use client"
 import { sendGAEvent } from '@next/third-parties/google';
+import Link from 'next/link';
 import React from 'react';
 import { FaRegCheckCircle } from "react-icons/fa";
 
@@ -12,12 +13,14 @@ const FeatureItem = ({ feature, isAvailable }) => (
   </p>
 );
 
-const PricingCard = ({ title, price, description, features, isHighlighted }) => (
+const PricingCard = ({ title, price, description, features, isHighlighted, link }) => (
   <div className={`w-full md:w-1/3 rounded-lg shadow hover:shadow-xl transition duration-100 ease-in-out p-6 mb-10 md:mb-0 text-start py-5 ${isHighlighted ? 'bg-slate-700 text-white' : 'bg-white text-black'}`}>
     <h3 className={`${isHighlighted ? 'text-white' : 'text-black'} text-xl`}>{title}</h3>
     <p className={`text-sm mt-2 py-2 ${isHighlighted ? 'opacity-75' : ''}`}>{description}</p>
     <p className={`mt-1 py-2`}><span className="font-bold text-5xl">{price}</span> /Month</p>
-    <button onClick={()=>sendGAEvent('event')} className={`w-full border rounded-md hover:bg-black hover:text-white hover:shadow-xl transition duration-150 ease-in-out py-4 mt-4 ${isHighlighted ? 'bg-white text-black border-white text-lg' : 'text-gray-900 border-slate-600 text-lg'}`}>Get Started Now</button>
+    <Link href={link}>
+    <button onClick={()=>sendGAEvent('event')}  className={`w-full border rounded-md hover:bg-black hover:text-white hover:shadow-xl transition duration-150 ease-in-out py-4 mt-4 ${isHighlighted ? 'bg-white text-black border-white text-lg' : 'text-gray-900 border-slate-600 text-lg'}`}>Get Started Now</button>
+    </Link>
     <div className={`text-base font-medium cursor-pointer mt-4`}>
       {features.map((feature, index) => (
         <FeatureItem key={index} feature={feature.name} isAvailable={feature.isAvailable} />
@@ -31,6 +34,7 @@ const Pricing = () => {
     {
       title: 'Free Plan',
       price: '$0',
+      link:"/generate",
       description: 'Ideal for individuals who need quick access to basic features.',
       features: [
         { name: '20,000+ of PNG & SVG graphics', isAvailable: true },
@@ -46,6 +50,7 @@ const Pricing = () => {
     {
       title: 'Professional',
       price: '$25',
+      link:"https://buy.stripe.com/test_dR6aI42yt3YPbJedQR",
       description: 'Ideal for individuals who need advanced features and tools for client work.',
       features: [
         { name: '20,000+ of PNG & SVG graphics', isAvailable: true },
@@ -61,6 +66,7 @@ const Pricing = () => {
     {
       title: 'Enterprise',
       price: '$100',
+      link:"https://buy.stripe.com/test_6oE4jG1up8f57sY4gi",
       description: 'Ideal for businesses who need personalized services and security for large teams.',
       features: [
         { name: '20,000+ of PNG & SVG graphics', isAvailable: true },
